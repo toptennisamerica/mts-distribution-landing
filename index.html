@@ -45,6 +45,16 @@
   .step p { margin:0; color:var(--muted); }
   .cta { text-align:center; }
   .cta .actions { justify-content:center; margin-top:8px; }
+  .form { background:#fff; border:1px solid var(--line); border-radius:10px; padding:28px; max-width:760px; }
+  .form .grid { display:grid; grid-template-columns:1fr 1fr; gap:16px; }
+  .form .full { grid-column:1 / -1; }
+  .form label { display:block; font-size:14px; font-weight:600; margin-bottom:6px; }
+  .form input, .form select, .form textarea { width:100%; padding:11px 12px; border:1px solid #cdd4dd; border-radius:6px; font:inherit; background:#fff; color:var(--ink); }
+  .form input:focus, .form select:focus, .form textarea:focus { outline:2px solid var(--blue); outline-offset:1px; border-color:var(--blue); }
+  .form .note { font-size:13px; color:var(--muted); margin:14px 0 0; }
+  .form button { margin-top:18px; cursor:pointer; }
+  .hp { position:absolute; left:-9999px; }
+  @media (max-width:760px) { .form .grid { grid-template-columns:1fr; } .form { padding:20px; } }
   footer { background:var(--navy); color:#c9d2de; font-size:14px; }
   footer .wrap { display:flex; flex-wrap:wrap; justify-content:space-between; gap:16px; padding-top:28px; padding-bottom:28px; }
   footer a { color:#fff; }
@@ -58,7 +68,7 @@
 </style>
 </head>
 <body>
-  <div class="topbar">Wholesale only &middot; <a href="#apply">Request a wholesale account &rarr;</a></div>
+  <div class="topbar">Wholesale only &middot; <a href="#contact">Request a wholesale account &rarr;</a></div>
   <header>
     <div class="wrap">
       <a href="/"><img src="https://cdn.shopify.com/s/files/1/0556/0900/0245/files/MTS_Aviation_Distribution_Logo_HERO_final.png?width=500" alt="MTS Aviation Distribution"></a>
@@ -72,7 +82,7 @@
       <p>We supply hobby shops, online stores, museums and airport stores with InFlight200, JFox, B-Models and more. Wholesale accounts only.</p>
       <div class="actions">
         <a class="btn btn-primary" href="https://shop.mtsaviationdistribution.com/account">Retailer sign in</a>
-        <a class="btn btn-light" href="#apply">Apply for a wholesale account</a>
+        <a class="btn btn-light" href="#contact">Apply for a wholesale account</a>
       </div>
     </div>
   </div>
@@ -102,10 +112,47 @@
       </div>
       <div class="cta" style="margin-top:36px">
         <div class="actions">
-          <a class="btn btn-primary" href="https://www.mtsaviationmodels.com/pages/wholesale">Apply for a wholesale account</a>
+          <a class="btn btn-primary" href="#contact">Apply for a wholesale account</a>
           <a class="btn btn-outline" href="https://shop.mtsaviationdistribution.com/account">Already approved? Sign in</a>
         </div>
       </div>
+    </div>
+  </section>
+
+  <section id="contact">
+    <div class="wrap">
+      <h2>Contact us or apply for a wholesale account</h2>
+      <p class="lead">Send us a message and we'll get back to you by email. To apply, include your business details and resale certificate.</p>
+      <form class="form" action="https://formsubmit.co/sales@mtsaviationdistribution.com" method="POST">
+        <input type="hidden" name="_subject" value="New message from mtsaviationdistribution.com">
+        <input type="hidden" name="_template" value="table">
+        <input type="hidden" name="_captcha" value="true">
+        <input type="hidden" name="_next" value="https://toptennisamerica.github.io/mts-distribution-landing/thanks.html">
+        <input type="text" name="_honey" class="hp" tabindex="-1" autocomplete="off">
+        <div class="grid">
+          <div class="full"><label for="f-topic">I'm writing about *</label>
+            <select id="f-topic" name="Topic" required>
+              <option value="Wholesale account application">Applying for a wholesale account</option>
+              <option value="Question">A question</option>
+            </select></div>
+          <div><label for="f-name">Your name *</label><input id="f-name" name="Name" autocomplete="name" required></div>
+          <div><label for="f-email">Email *</label><input id="f-email" name="email" type="email" autocomplete="email" required></div>
+          <div><label for="f-business">Business name</label><input id="f-business" name="Business name" autocomplete="organization"></div>
+          <div><label for="f-phone">Phone</label><input id="f-phone" name="Phone" type="tel" autocomplete="tel"></div>
+          <div><label for="f-web">Website or social media</label><input id="f-web" name="Website"></div>
+          <div><label for="f-type">Type of business</label>
+            <select id="f-type" name="Type of business">
+              <option value="">Choose one</option>
+              <option>Hobby / model shop</option><option>Online store</option><option>Museum or gift shop</option>
+              <option>Airport or airline store</option><option>Distributor</option><option>Other</option>
+            </select></div>
+          <div class="full"><label for="f-addr">Business address</label><input id="f-addr" name="Business address" autocomplete="street-address" placeholder="Street, city, state/province, zip, country"></div>
+          <div class="full"><label for="f-tax">Resale certificate or tax ID</label><input id="f-tax" name="Resale certificate or tax ID"></div>
+          <div class="full"><label for="f-msg">Message *</label><textarea id="f-msg" name="Message" rows="5" required placeholder="Brands you're interested in, how you found us, or your question"></textarea></div>
+        </div>
+        <button class="btn btn-primary" type="submit">Send</button>
+        <p class="note">We reply to every message by email. Approved retailers sign in with the email above.</p>
+      </form>
     </div>
   </section>
 
