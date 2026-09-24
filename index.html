@@ -83,6 +83,10 @@
   .facts strong { display:block; font-size:22px; color:#fff; margin-bottom:4px; }
   .facts span { color:#b9c5d4; font-size:14px; }
   @media (max-width:760px) { .about-grid { grid-template-columns:1fr; gap:28px; } .facts { grid-template-columns:repeat(2, 1fr); } .about { padding:52px 0 48px; } }
+  .contact-wrap { text-align:center; }
+  .contact-wrap .lead { margin-left:auto; margin-right:auto; }
+  .contact-wrap .form { margin:0 auto; text-align:left; }
+  .form select { -webkit-appearance:none; appearance:none; padding-right:36px; background:#fff url("data:image/svg+xml;utf8,<svg xmlns='http://www.w3.org/2000/svg' width='12' height='8' viewBox='0 0 12 8'><path d='M1 1l5 5 5-5' fill='none' stroke='%235b6675' stroke-width='1.8'/></svg>") no-repeat right 12px center; }
   footer { background:var(--navy); color:#c9d2de; font-size:14px; }
   footer .wrap { display:flex; flex-wrap:wrap; justify-content:space-between; gap:16px; padding-top:28px; padding-bottom:28px; }
   footer a { color:#fff; }
@@ -172,7 +176,7 @@
   </section>
 
   <section id="contact">
-    <div class="wrap">
+    <div class="wrap contact-wrap">
       <h2>Contact us or apply for a wholesale account</h2>
       <p class="lead">Send us a message and we'll get back to you by email. To apply, include your business details and resale certificate.</p>
       <form class="form" action="https://formsubmit.co/sales@mtsaviationdistribution.com" method="POST">
