@@ -68,6 +68,18 @@
   .form button { margin-top:18px; cursor:pointer; }
   .hp { position:absolute; left:-9999px; }
   @media (max-width:760px) { .form .grid { grid-template-columns:1fr; } .form { padding:20px; } }
+  .about { background:var(--navy); color:#fff; padding:72px 0 64px; }
+  .about-grid { display:grid; grid-template-columns:1.05fr 1fr; gap:48px; align-items:center; }
+  .about .eyebrow { text-transform:uppercase; letter-spacing:.12em; font-size:12px; font-weight:700; color:#8fb3e6; margin:0 0 10px; }
+  .about h2 { font-size:clamp(26px, 3.2vw, 34px); line-height:1.2; margin:0 0 18px; }
+  .about p { color:#cfd8e4; margin:0 0 14px; font-size:16.5px; }
+  .about-photo { margin:0; background:#fff; border-radius:12px; padding:18px; box-shadow:0 18px 40px rgba(0,0,0,.35); }
+  .about-photo img { width:100%; display:block; border-radius:6px; }
+  .facts { list-style:none; padding:0; margin:44px 0 0; display:grid; grid-template-columns:repeat(4, 1fr); gap:16px; }
+  .facts li { border:1px solid rgba(255,255,255,.14); background:rgba(255,255,255,.04); border-radius:10px; padding:18px 18px 16px; }
+  .facts strong { display:block; font-size:22px; color:#fff; margin-bottom:4px; }
+  .facts span { color:#b9c5d4; font-size:14px; }
+  @media (max-width:760px) { .about-grid { grid-template-columns:1fr; gap:28px; } .facts { grid-template-columns:repeat(2, 1fr); } .about { padding:52px 0 48px; } }
   footer { background:var(--navy); color:#c9d2de; font-size:14px; }
   footer .wrap { display:flex; flex-wrap:wrap; justify-content:space-between; gap:16px; padding-top:28px; padding-bottom:28px; }
   footer a { color:#fff; }
@@ -118,11 +130,23 @@
     </div>
   </section>
 
-  <section class="bg">
+  <section class="about">
+    <div class="wrap about-grid">
+      <div>
+        <p class="eyebrow">About MTS Aviation Distribution</p>
+        <h2>Your wholesale source for diecast airliners and military models</h2>
+        <p>We're a wholesale distributor of 1:200 and 1:400 scale diecast model aircraft, based in Beavercreek, Ohio. We supply hobby shops, online stores, museum and airport gift shops across the United States, Canada and Latin America.</p>
+        <p>New releases, restocks and pre-orders from InFlight200, JFox, B-Models, KJ Models, White Box Models, Retro Models, ARD200, ARD400, Aviation200, El Aviador and JP60 / Aero Modelos, straight from our inventory.</p>
+      </div>
+      <figure class="about-photo"><img src="https://cdn.shopify.com/s/files/1/0556/0900/0245/products/sabena_airbus_a330-301_oo-sfo_with_stand_inflight_if333sn1219_limited_production_27_units_scale_1-200.jpg?width=1100" alt="InFlight200 1:200 Sabena Airbus A330-300 diecast model" loading="lazy"></figure>
+    </div>
     <div class="wrap">
-      <h2>Your wholesale source for diecast airliners and military models</h2>
-      <p class="lead" style="margin-bottom:12px">MTS Aviation Distribution is a wholesale distributor of 1:200 and 1:400 scale diecast model aircraft based in Beavercreek, Ohio, supplying retailers across the United States, Canada and Latin America.</p>
-      <p class="lead" style="margin-bottom:0">We carry new releases, restocks and pre-orders from InFlight200, JFox, B-Models, KJ Models, White Box Models, Retro Models, ARD200, ARD400, Aviation200, El Aviador and JP60 / Aero Modelos. Hobby shops, online stores, museum and airport gift shops can apply for a wholesale account and order directly from our inventory, with daily stock files for approved retailers.</p>
+      <ul class="facts">
+        <li><strong>11</strong><span>brands in stock</span></li>
+        <li><strong>1:200 &amp; 1:400</strong><span>airliners and military</span></li>
+        <li><strong>Daily</strong><span>inventory files for retailers</span></li>
+        <li><strong>North America</strong><span>and Latin America shipping</span></li>
+      </ul>
     </div>
   </section>
 
